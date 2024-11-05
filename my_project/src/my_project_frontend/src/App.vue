@@ -25,11 +25,10 @@ export default {
 
 
 </script>
-
 <template>
-  <main>
-    <table>
-      <thead>
+  <main class="container mx-auto">
+    <table class='w-full'>
+      <thead class="lime-500">
         <tr>
           <th scope="col">Waluta</th>
           <th scope="col">Kod</th>
@@ -38,7 +37,7 @@ export default {
       </thead>
       <tbody>
         <tr v-for="kurs in kursy">
-          <td>{{ kurs.currency }}</td>
+          <th scope="row">{{ kurs.currency }}</th>
           <td>{{ kurs.code }}</td>
           <td>{{ kurs.mid }}</td>
         </tr>
