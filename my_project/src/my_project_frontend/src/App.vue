@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     async getexchangerates(){
-      const url = `$(window.location.origin)/api/exchangerates/tables/a/?format=json`;
+      const url = `${window.location.origin}/api/exchangerates/tables/a/?format=json`;
       const response = await fetch(url);
 
       const responsJson = await response.json();
@@ -26,20 +26,20 @@ export default {
 
 </script>
 <template>
-  <main class="container mx-auto">
-    <table class='w-full'>
-      <thead class="lime-500">
+  <main class="container mx-auto p-4">
+    <table class="w-full border-collapse table-auto">
+      <thead class="bg-lime-500 text-white">
         <tr>
-          <th scope="col">Waluta</th>
-          <th scope="col">Kod</th>
-          <th scope="col">Cena</th>
+          <th scope="col" class="px-6 py-3 text-left">Waluta</th>
+          <th scope="col" class="px-6 py-3 text-left">Kod</th>
+          <th scope="col" class="px-6 py-3 text-left">Cena</th>
         </tr>
       </thead>
-      <tbody>
-        <tr v-for="kurs in kursy">
-          <th scope="row">{{ kurs.currency }}</th>
-          <td>{{ kurs.code }}</td>
-          <td>{{ kurs.mid }}</td>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr v-for="kurs in kursy" class="hover:bg-gray-50">
+          <th scope="row" class="px-6 py-4 text-left">{{ kurs.currency }}</th>
+          <td class="px-6 py-4">{{ kurs.code }}</td>
+          <td class="px-6 py-4">{{ kurs.mid }}</td>
         </tr>
       </tbody>
     </table>
